@@ -1,12 +1,14 @@
 #!/bin/bash
 
+CHECK_ROOT(){
 userid=$(id -u)
-
 if [ $userid -ne 0 ]
 then 
     echo "please run it through root privilages"
     exit 1
 fi
+}
+CHECK_ROOT 
 
 VALIDATE(){
     if [ $1 -ne 0 ]
