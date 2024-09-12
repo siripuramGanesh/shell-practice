@@ -22,7 +22,7 @@ VALIDATE(){
         echo -e "$2 is not installed $R failure $N"
         exit 1
     else 
-        echo -e "$2 is installed $N success $N"
+        echo -e "$2 is installed $G success $N"
     fi
 }
 
