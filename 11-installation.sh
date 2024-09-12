@@ -2,7 +2,7 @@
 userid=$(id -u)
 echo "print userid $userid"
 
-if [ userid -ne 0 ]
+if [ $userid -ne 0 ]
 then 
     echo "please run the command through root privilages"
 else
