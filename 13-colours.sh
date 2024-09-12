@@ -1,5 +1,9 @@
 #!/bin/bash
 
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+
 CHECK_ROOT(){
 userid=$(id -u)
 if [ $userid -ne 0 ]
@@ -10,17 +14,15 @@ fi
 }
 CHECK_ROOT 
 
-R="\e[31m"
-G="\e[32m"
-N="\e[0m"
+
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 is not installed $R failure $N"
+        echo -e "$2 is not installed $R failure $N"
         exit 1
     else 
-        echo "$2 is installed $N success $N"
+        echo -e "$2 is installed $N success $N"
     fi
 }
 
