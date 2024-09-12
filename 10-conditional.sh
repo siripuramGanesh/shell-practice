@@ -5,3 +5,4 @@ then
     echo "print $num is greater thann 20"
 else
     echo "$num is not greatre than 20"
+fi
