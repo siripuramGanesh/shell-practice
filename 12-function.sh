@@ -41,3 +41,4 @@ then
     VALIDATE $?
 else
     echo "nginx is already installed"
+fi
