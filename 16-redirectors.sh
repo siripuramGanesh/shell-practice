@@ -27,7 +27,7 @@ USAGE(){
     echo "USAGE: sh 16-redirectors.sh package1 package2"
 }
 
-if [$# -eq 0]
+if [ $# -eq 0 ]
 then 
     USAGE
 fi
@@ -39,6 +39,7 @@ VALIDATE(){
         exit 1
     else 
         echo "$2 installing is $G success $N" &>>$LOG_FILE
+    fi
 }
 
 for package in $@
