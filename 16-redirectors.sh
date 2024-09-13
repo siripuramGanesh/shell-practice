@@ -3,7 +3,7 @@
 #/var/log/shell-practice/16-redirectors-<timestamp>.log  ---------->        example
 
 L0G_FOLDER="/var/log/shell-script"
-SCRIPT_NAME="$($0 | cut -d "." -f1)"
+SCRIPT_NAME="$($#0 | cut -d "." -f1)"
 TIME_STAMP="date +%Y-%m-%d-%H-%M-%S"
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME_STAMP.log"
 mkdir -p $LOG_FOLDER 
