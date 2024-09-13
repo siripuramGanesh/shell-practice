@@ -50,7 +50,7 @@ do
     if [ $? -ne 0 ]
     then 
         echo "$package is not installed goinG to install"
-        dnf install $package
+        dnf install $package &>>$LOG_FILE
         VALIDATE $? $package 
     else 
         echo "$Y $package is already installed $N" &>>$LOG_FILE
