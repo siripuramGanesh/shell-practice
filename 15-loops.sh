@@ -7,7 +7,6 @@ G="\e[32m"
 N="\e[0m"
 
 CHECK_ROOT(){
-    echo "$userid"
     if [ $userid -ne 0 ]
     then
         echo "please run through root privilages" 
@@ -29,6 +28,6 @@ VALIDATE(){
 
 for package in $@
 do
- echo "package"
+ echo "$package"
 done
 
