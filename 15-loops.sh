@@ -17,12 +17,12 @@ CHECK_ROOT(){
 CHECK_ROOT
 
 VALIDATE(){
-    if [ $? -ne 0 ]
+    if [ $1 -ne 0 ]
     then
-        echo "Installing $package is failed"
+        echo -e "Installing $package is $R failed $N"
         exit 1
     else
-        echo "Installing $package is success"
+        echo "Installing $package is $G success $N"
     fi
 }
 
@@ -33,7 +33,7 @@ do
         then
         echo "$package is not installed going to install it"
         dnf install $package
-        VALIDATE $package
+        VALIDATE $1 $package
         else
         echo "$package is already installed"
     fi
