@@ -8,10 +8,10 @@ TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME_STAMP.log"
 mkdir -p $LOG_FOLDER 
 
-$R="\e[31m"
-$G="\e[32m"
-$N="\e[0m"
-$Y="\e[33m"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+Y="\e[33m"
 
 USER_ID=$(id -u)
 
