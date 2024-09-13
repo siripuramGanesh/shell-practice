@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #/var/log/shell-practice/16-redirectors-<timestamp>.log  ---------->        example
 
 L0G_FOLDER="/var/log/shell-script"
@@ -17,7 +18,7 @@ USER_ID=$(id -u)
 CHECK_ROOT(){
     if [ $USER_ID -ne 0 ]
     then
-        echo "$R PLEASE RUN THROUGH ROOT PRIVILAGES $N" &>>LOG_FILE
+        echo "$R PLEASE RUN THROUGH ROOT PRIVILAGES $N" &>>$LOG_FILE
         exit 1
     fi
 }
@@ -34,10 +35,10 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then 
-        echo "$2 installing is $R failed $N" &>>LOG_FILE
+        echo "$2 installing is $R failed $N" &>>$LOG_FILE
         exit 1
     else 
-        echo "$2 installing is $G success $N" &>>LOG_FILE
+        echo "$2 installing is $G success $N" &>>$LOG_FILE
 }
 
 for package in $@
@@ -49,6 +50,6 @@ do
         dnf install $package
         VALIDATE $? $package 
     else 
-        echo "$Y $package is already installed $N" &>>LOG_FILE
+        echo "$Y $package is already installed $N" &>>$LOG_FILE
     fi
 done
