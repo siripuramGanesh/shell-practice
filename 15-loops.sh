@@ -19,10 +19,10 @@ CHECK_ROOT
 VALIDATE(){
     if [ $? -ne 0 ]
     then
-        echo "Installing is failed"
+        echo "Installing $package is failed"
         exit 1
     else
-        echo "Installing is success"
+        echo "Installing $package is success"
     fi
 }
 
