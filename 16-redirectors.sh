@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#/var/log/shell-practice/16-redirectors-<timestamp>.log  ---------->        example
+##/var/log/shell-practice/16-redirectors-<timestamp>.log  ---------->        example
 
 L0G_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
