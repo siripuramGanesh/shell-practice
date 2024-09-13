@@ -8,29 +8,31 @@ TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME_STAMP.log"
 #mkdir -p $LOG_FOLDER 
 
+USER_ID=$(id -u)
+
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-USER_ID=$(id -u)
-
 CHECK_ROOT(){
     if [ $USER_ID -ne 0 ]
     then
-        echo "$R PLEASE RUN THROUGH ROOT PRIVILAGES $N" &>>$LOG_FILE
+        echo -e "$R PLEASE RUN THROUGH ROOT PRIVILAGES $N" &>>$LOG_FILE
         exit 1
     fi
 }
 
 USAGE(){
-    echo "USAGE: sh 16-redirectors.sh package1 package2"
+    echo -e "$RUSAGE: $N sh 16-redirectors.sh package1 package2"
+    exit 1
 }
 
 if [ $# -eq 0 ]
 then 
     USAGE
 fi
+CHECK_ROOT
 
 VALIDATE(){
     if [ $1 -ne 0 ]
