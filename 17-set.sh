@@ -1,6 +1,6 @@
 #!bin/bash
 
-set -e
+set -ex
 
 echo "hello world"
 echoooo "helloooooo"
