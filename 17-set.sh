@@ -1,6 +1,6 @@
 #!bin/bash
 
-set -ex
+#set -ex
 
 #set -e is to stop the execution when there is any error at a specific line
 
