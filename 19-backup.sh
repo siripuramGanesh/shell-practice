@@ -24,10 +24,11 @@ fi
 
 FILES=$(find $SOURCE_FILE -name "*.log" -mtime +14)
 
+echo "files: $FILES"
+
 if [ ! -z $FILES ]
 then    
     echo "files are found"
-    zip
 else    
     echo "files are not found"
 fi
