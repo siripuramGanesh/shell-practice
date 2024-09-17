@@ -16,8 +16,8 @@ fi
 FILES=$(find /home/ec2-user/logs -name "*.log" -mtime +14)
 echo "Files: $FILES"
 
-while IFS= read -r line #IFS,internal field seperator,empty it will ignore white space
+while IFS= read -r file #IFS,internal field seperator,empty it will ignore white space
 do              #-r is for not to ignore special 
-    echo "Deleting line : $line"
-    rm -rf $line
+    echo "Deleting file : $file"
+    rm -rf $file
 done <<< $FILES
