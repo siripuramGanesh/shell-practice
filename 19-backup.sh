@@ -39,22 +39,18 @@ if [ ! -z $FILES ] #true if FILES is empty, ! nakes it expression false
 then
     echo "Files are found"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
-    find ${SOURCE_DIR} -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@
-
-    #check if zip file is successfully created or not
+    FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14) | zip "$ZIP_FILE" -@
     if [ -f $ZIP_FILE ]
-    then
-        echo "Successfully zippped files older than $DAYS"
-        #remove the files after zipping
-        while IFS= read -r file #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
-        do
-            echo "Deleting file: $file"
-            rm -rf $file
-        done <<< $FILES
+    then 
+        echo "succesfully zip fil created"
+        while IFS=read -r file
+        do 
+            echo "deleting files"
+            rm -rf file
+        done <<<$FILES
     else
-        echo "Zipping the files is failed"
-        exit 1
-    fi
-else
-    echo "No files older than $DAYS"
+        echo "failed to create"
+    
+else 
+    echo "no files older than $DAYS"
 fi
