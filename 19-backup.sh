@@ -22,11 +22,12 @@ then
     echo "$DEST_FILE doesnot exist please check "
 fi
 
-FILES=$(find ${SOURCE_FILE} -name "*.log" -mtime +14)
+FILES=$(find $SOURCE_FILE -name "*.log" -mtime +14)
 
 if [ ! -z $FILES ]
 then    
     echo "files are found"
+    zip
 else    
     echo "files are not found"
 fi
