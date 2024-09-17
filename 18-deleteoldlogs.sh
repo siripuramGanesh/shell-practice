@@ -18,6 +18,6 @@ echo "Files: $FILES"
 
 while IFS= read -r line #IFS,internal field seperator,empty it will ignore white space
 do              #-r is for not to ignore special 
-    echo "Deleting files : $files"
-    rm -rf $files
+    echo "Deleting line : $line"
+    rm -rf $line
 done <<< $FILES
