@@ -8,7 +8,10 @@ N="\e[0m"
 
 if [ -d SOURCE_DIR ]
 then
-    echo "$SOURCE_DIR  $G exist $N"
+    echo -e "$SOURCE_DIR  $G exist $N"
 else
-    echo "$SOURCE_DIR $R doesnot exist $N"
+    echo -e "$SOURCE_DIR $R doesnot exist $N"
 fi
+
+FILES=$(find /home/ec2-user/logs -name "*.log" -mtime +14)
+echo "Files: $FILES"
