@@ -22,7 +22,7 @@ then
     echo "$DEST_FILE doesnot exist please check "
 fi
 
-FILES=$(find $SOURCE_FILE -name "*.log" -mtime +14)
+FILES=$(find ${SOURCE_FILE} -name "*.log" -mtime +14)
 
 echo "files: $FILES"
 
